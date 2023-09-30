@@ -135,7 +135,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 0
 
-assign [class="LibreWolf" instance="Navigator"] $ws2
+assign [class="LibreWolf" instance="Navigator"] $web
 
 # set $i3lockwall i3lock -i ~/Downloads/wallpaper.png
 set $i3lockwall sh ~/.config/i3/scripts/lock.sh
@@ -199,43 +199,31 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# special
-set_from_resource $foreground foreground #1E1E2E
-set_from_resource $background background #CDD6F4
-set_from_resource $cursorColor cursorColor #F5E0DC
-
-# black
-set_from_resource $black1 color0 #45475A
-set_from_resource $black2 color8 #585B70
-set $trueblack #000000
-
-# red
-set_from_resource $red1 color1 #F38BA8
-set_from_resource $red2 color9 #F38BA8
-
-# green
-set_from_resource $green1 color2 #A6E3A1
-set_from_resource $green2 color10 #A6E3A1
-
-# yellow
-set_from_resource $yellow1 color3 #F9E2AF
-set_from_resource $yellow2 color11 #F9E2AF
-
-# blue
-set_from_resource $blue1 color4 #89B4FA
-set_from_resource $blue2 color12 #89B4FA
-
-# magenta
-set_from_resource $cyan1 color5 #F5C2E7
-set_from_resource $cyan2 color13 #F5C2E7
-
-# cyan
-set_from_resource $cyan1 color6 #94E2D5
-set_from_resource $cyan2 color14 #94E2D5
-
-# white
-set_from_resource $white1 color7 #BAC2DE
-set_from_resource $white2 color15 #A6ADC8
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
 
 ##########
 # DESIGN #
@@ -244,12 +232,13 @@ set_from_resource $white2 color15 #A6ADC8
 # hide borders
 hide_edge_borders both
 
-# class border backgr. text indicator child_border 
-client.focused 		#333333 $black2 $white2 #285577
-client.focused_inactive #333333 $background $foreground #484e50
-client.unfocused 	#333333 #222222 #888888 #292d2e #222222
-client.urgent 		$red1 $red1 $white2 $red1 $red1
-client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 for_window [class="URxvt*"] border pixel 1
 
@@ -272,16 +261,16 @@ bar {
 
     # tray_output primary
     colors {
-        background $black2
-        statusline $white2
-        separator $white2
+        background $base
+        statusline $text
+        separator $overlay0
 
         # border background text
-        focused_workspace 	$background $background $red1
-        active_workspace 	$black2 $black1 $white2
-        inactive_workspace 	$black1 $black2 $foreground
-        urgent_workspace 	$red1 $red1 $white2
-        binding_mode 		$background $red2 $white2
+        focused_workspace      $lavender $base $text
+        active_workspace       $overlay0 $base $subtext1
+        inactive_workspace     $overlay0 $base $subtext0
+        urgent_workspace       $peach $base $peach
+        binding_mode           $overlay2 $red $text
     }
 }
 
