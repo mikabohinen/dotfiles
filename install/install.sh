@@ -19,7 +19,14 @@ stow_dir X11
 ######
 stow_dir i3
 
+
 #########
 # picom #
 #########
 stow_dir picom
+
+
+#######
+# zsh #
+#######
+stow_dir zsh
