@@ -15,7 +15,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Iconsolata NF 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -290,3 +290,10 @@ mode "$mode_display" {
     bindsym Escape mode "default"
 }
 bindsym $mod+a mode "$mode_display"
+
+# launch dunst
+exec --no-startup-id dunst
+
+# dunst keyboard shortcuts
+bindsym $mod+x exec dunstctl close-all
+bindsym Ctrl+BackSpace exec dunstctl history-pop

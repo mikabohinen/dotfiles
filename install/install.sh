@@ -30,3 +30,16 @@ stow_dir picom
 # zsh #
 #######
 stow_dir zsh
+
+
+#########
+# fonts #
+#########
+mkdir -p "$XDG_DATA_HOME"
+cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
+
+
+#########
+# dunst #
+#########
+stow_dir dunst
