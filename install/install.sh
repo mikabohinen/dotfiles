@@ -18,3 +18,8 @@ stow_dir X11
 # i3 #
 ######
 stow_dir i3
+
+#########
+# picom #
+#########
+stow_dir picom

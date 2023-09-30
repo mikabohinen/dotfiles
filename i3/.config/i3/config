@@ -29,6 +29,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id "setxkbmap -layout us,no"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -45,6 +46,9 @@ bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# toggle keyboard layouts
+bindsym $mod+z exec "setxkbmap -query | grep -q 'layout:\s*us' && setxkbmap no || setxkbmap us"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
