@@ -1,12 +1,9 @@
 #!/bin/bash
 
-config="$HOME/.config"
-dotfiles="$HOME/.dotfiles"
-
 stow_dir() {
     local name="$1"
-    local dir="$dotfiles/$1"
-    local orig="$config/$1"
+    local dir="$DOTFILES/$1"
+    local orig="$XDG_CONFIG_HOME/$1"
 
     if [ -d "$orig" ]; then
         mv "$orig" "$orig.bak"
