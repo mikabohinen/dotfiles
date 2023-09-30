@@ -1,6 +1,9 @@
 # start urxvt daemon
 urxvtd -o -q -f
 
+# better mounting of devices
+udiskie &
+
 # typing speed
 xset r rate 200 30
 
