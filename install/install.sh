@@ -43,3 +43,12 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 # dunst #
 #########
 stow_dir dunst
+
+
+########
+# tmux #
+########
+stow_dir tmux
+[ ! -d "$XDG_CONFIG_HOME/tmux/plugins/tpm"] && git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME/tmux/plugins/tpm"
+
+stow_dir tmuxp

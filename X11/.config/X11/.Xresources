@@ -46,7 +46,7 @@ URxvt*scrollBar_right: false
 URxvt*urgentOnBell: true
 URxvt*depth: 24
 URxvt*iso14755: false
-URxvt*font: xft:FiraCode Nerd Font:style=Medium:size=14:antialias=true
+URxvt*font: xft:FiraCode Nerd Font Mono:style=Medium:size=14:antialias=true
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4

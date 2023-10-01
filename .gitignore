@@ -35,6 +35,9 @@ patched-src
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+### Tmux ###
+tmux/.config/tmux/plugins
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
