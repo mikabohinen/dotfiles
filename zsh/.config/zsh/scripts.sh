@@ -30,5 +30,5 @@ ftmuxp() {
 }
 
 scratchpad() {
-    "$DOTFILES/zsh/scratchpad.sh"
+    "$DOTFILES/zsh/.config/zsh/scratchpad.sh"
 }
