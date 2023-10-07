@@ -11,26 +11,22 @@ super + ctrl + o
     zathura ~/workspace/master/current_course/master.pdf
 
 # Open the course directory of the current course in lf (file manager)
-super + ctrl + r
+super + alt + r
     urxvt -e lf ~/workspace/master/current_course
 
 # Open the course directory of the current course in a terminal (urxvt)
 super + ctrl + j
-    urxvt -cd ~/university/current_course
+    urxvt -e cd ~/university/current_course
 
 # Update master.tex to include all lectures and recompile using latexrun
-super + v
-    ~/workspace/master/scripts/update-master.tex.py all && \
-    cd ~/workspace/master/current_course && \
-    latexrun master.tex
+#super + v
+#    ~/workspace/master/scripts/compile-all-masters.py && \
+#    cd ~/workspace/master/current_course && \
+#    latexrun master.tex
 
 # List all lectures for the current course
 super + ctrl + l
     ~/workspace/master/scripts/rofi-lectures.py
-
-# Create a new lecture for the current course
-super + ctrl + n
-    ~/workspace/master/scripts/create-new-lecture.py
 
 # Select a course using Rofi
 super + alt + s
