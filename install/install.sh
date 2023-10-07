@@ -52,3 +52,15 @@ stow_dir tmux
 [ ! -d "$XDG_CONFIG_HOME/tmux/plugins/tpm"] && git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME/tmux/plugins/tpm"
 
 stow_dir tmuxp
+
+
+#########
+# sxhkd #
+#########
+stow_dir sxhkd
+
+
+########
+# rofi #
+########
+stow_dir rofi
