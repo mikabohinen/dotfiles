@@ -54,4 +54,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Better cd
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
+    alias cd="z"
 fi
