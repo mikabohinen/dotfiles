@@ -50,3 +50,6 @@ bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Better cd
+eval "$(zoxide init zsh)"
