@@ -1,0 +1,5 @@
+include catppuccin-mocha
+
+set selection-clipboard clipboard
+
+set font "Cartograph CF 12"
