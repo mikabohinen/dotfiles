@@ -10,6 +10,9 @@ export VISUAL="nvim"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # History file path
 export HISTFILE="$ZDOTDIR/.zhistory"
 # Maximum events for internal history
