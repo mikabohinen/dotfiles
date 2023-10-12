@@ -10,5 +10,4 @@ udiskie &
 # include what's in .Xresources
 xrdb -merge ~/.config/X11/.Xresources
 
-
 exec i3

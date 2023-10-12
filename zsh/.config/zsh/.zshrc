@@ -57,5 +57,9 @@ if command -v zoxide >/dev/null 2>&1; then
     alias cd="z"
 fi
 
+# Pywal setup
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
 # bun completions
 [ -s "/home/mika/.bun/_bun" ] && source "/home/mika/.bun/_bun"

@@ -1,5 +1,33 @@
-include catppuccin-mocha
+set recolor "true"
 
+set completion-bg "#050931"
+set completion-fg "#bbbbe0"
+set completion-group-bg "#050931"
+set completion-group-fg "#707AE4"
+set completion-highlight-bg "#bbbbe0"
+set completion-highlight-fg "#050931"
+
+set recolor-lightcolor "#050931"
+set recolor-darkcolor "#bbbbe0"
+set default-bg "#050931"
+
+set inputbar-bg "#050931"
+set inputbar-fg "#bbbbe0"
+set notification-bg "#050931"
+set notification-fg "#bbbbe0"
+set notification-error-bg "#7076D9"
+set notification-error-fg "#bbbbe0"
+set notification-warning-bg "#7076D9"
+set notification-warning-fg "#bbbbe0"
+set statusbar-bg "#050931"
+set statusbar-fg "#bbbbe0"
+set index-bg "#050931"
+set index-fg "#bbbbe0"
+set index-active-bg "#bbbbe0"
+set index-active-fg "#050931"
+set render-loading-bg "#050931"
+set render-loading-fg "#bbbbe0"
+
+set window-title-home-tilde true
+set statusbar-basename true
 set selection-clipboard clipboard
-
-set font "Cartograph CF 12"

@@ -174,7 +174,8 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/wallpaper.jpg
+exec --no-startup-id wal -i ~/.config/i3/pywal/wallpaper.jpg -q
+exec --no-startup-id genzathurarc > ~/.config/zathura/zathurarc
 bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/change_wallpaper.sh
 
 # floating pop up automatically

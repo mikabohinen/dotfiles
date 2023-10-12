@@ -7,7 +7,7 @@ WALLPAPER_DIR="$HOME/pictures/wallpapers/"
 NEW_WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
 # Update the symlink to point to the new random wallpaper
-ln -sf "$NEW_WALLPAPER" "$XDG_CONFIG_HOME/i3/feh/wallpaper.jpg"
+ln -sf "$NEW_WALLPAPER" "$XDG_CONFIG_HOME/i3/pywal/wallpaper.jpg"
 
 # Set the new wallpaper
-feh --no-fehbg --bg-fill "$XDG_CONFIG_HOME/i3/feh/wallpaper.jpg"
+wal -i "$XDG_CONFIG_HOME/i3/pywal/wallpaper.jpg" -q
