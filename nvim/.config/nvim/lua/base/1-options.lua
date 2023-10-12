@@ -10,7 +10,7 @@
 _G.base = {}
 
 -- Theme
-base.default_colorscheme = "tokyonight-night"
+base.default_colorscheme = "astrodark"
 
 -- define variables -----------------------------------------------------------
 local options = {
