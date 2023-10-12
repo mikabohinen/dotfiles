@@ -36,6 +36,7 @@
 --       -> code documentation                 [docs]
 --       -> ask chatgpt                        [neural]
 --       -> hop.nvim
+--       -> oil.nvim
 
 --
 --   KEYBINDINGS REFERENCE
@@ -1000,12 +1001,12 @@ if is_available("telescope.nvim") then
 		desc = "Find commands",
 	}
 	-- Let's disable this. It is way too imprecise. Use rnvimr instead.
-	-- maps.n["<leader>ff"] = {
-	--   function()
-	--     require("telescope.builtin").find_files { hidden = true, no_ignore = true }
-	--   end,
-	--   desc = "Find all files",
-	-- }
+	maps.n["<leader><leader>"] = {
+	  function()
+	    require("telescope.builtin").find_files { hidden = true, no_ignore = true }
+	  end,
+	  desc = "Find all files",
+	}
 	-- maps.n["<leader>fF"] = {
 	--   function() require("telescope.builtin").find_files() end,
 	--   desc = "Find files (no hidden)",
@@ -1617,6 +1618,16 @@ if is_available("hop.nvim") then
 			vim.cmd("silent! HopWord")
 		end,
 		desc = "Hop to word",
+	}
+end
+
+-- oil.nvim ----------------------------------------------------------------
+if is_available("oil.nvim") then
+	maps.n["-"] = {
+		function ()
+			vim.cmd("Oil")
+		end,
+		desc = "View directory",
 	}
 end
 
