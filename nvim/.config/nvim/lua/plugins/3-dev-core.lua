@@ -558,6 +558,20 @@ return {
 					["<C-j>"] = cmp.mapping.select_next_item({
 						behavior = cmp.SelectBehavior.Insert,
 					}),
+					["<C-f>"] = cmp.mapping(function(fallback)
+						if require("luasnip").choice_active() then
+							return require("luasnip").change_choice(1)
+						else
+							fallback()
+						end
+					end),
+					["<C-b>"] = cmp.mapping(function(fallback)
+						if require("luasnip").choice_active() then
+							return require("luasnip").change_choice(-1)
+						else
+							fallback()
+						end
+					end),
 					["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 					["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),

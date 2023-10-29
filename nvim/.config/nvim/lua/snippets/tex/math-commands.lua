@@ -93,7 +93,7 @@ M = {
 	autosnippet(
 		{ trig = "lim", name = "lim(sup|inf)", dscr = "lim(sup|inf)" },
 		fmta(
-			[[ 
+			[[
     \lim<><><>
     ]],
 			{

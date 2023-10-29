@@ -1,4 +1,3 @@
--- TODO: add oil.nvim
 -- Dev
 -- Things you actively use for coding.
 
