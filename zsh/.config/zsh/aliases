@@ -9,6 +9,9 @@ alias gp='git push'
 alias v='nvim'
 alias vim='nvim'
 
+# Better ls
+alias ls='ls --color=auto'
+
 # Directory stack
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index

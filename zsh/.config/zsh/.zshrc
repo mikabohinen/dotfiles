@@ -14,6 +14,11 @@ source ~/dotfiles/zsh/.config/zsh/external/completion.zsh
 
 autoload -Uz prompt_purification_setup; prompt_purification_setup
 
+# Enable portage completion for zsh
+autoload -U compinit promptinit
+compinit
+promptinit; prompt gentoo
+
 # Push the current directory visited on to the stack.
 setopt AUTO_PUSHD
 # Do not store duplicate directories in the stack
@@ -39,7 +44,7 @@ fi
 
 if [ "$(tty)" = "/dev/tty1" ];
 then
-    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+    pgrep dwm || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
 source $DOTFILES/zsh/.config/zsh/scripts.sh
@@ -49,7 +54,7 @@ bindkey -r '^l'
 bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 
 # Better cd
 if command -v zoxide >/dev/null 2>&1; then
@@ -58,8 +63,8 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # Pywal setup
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+#(cat ~/.cache/wal/sequences &)
+#source ~/.cache/wal/colors-tty.sh
 
 # bun completions
-[ -s "/home/mika/.bun/_bun" ] && source "/home/mika/.bun/_bun"
+#[ -s "/home/mika/.bun/_bun" ] && source "/home/mika/.bun/_bun"
