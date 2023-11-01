@@ -12,7 +12,6 @@ autoload -Uz compinit; compinit
 _comp_options+=(globdots) # With hidden files
 source ~/dotfiles/zsh/.config/zsh/external/completion.zsh
 
-autoload -Uz prompt_purification_setup; prompt_purification_setup
 
 # Enable portage completion for zsh
 autoload -U compinit promptinit
@@ -61,6 +60,10 @@ if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
     alias cd="z"
 fi
+
+# Prompt setup
+source "/home/mika/.config/zsh/external/minimal.zsh"
+# autoload -Uz prompt_purification_setup; prompt_purification_setup
 
 # Pywal setup
 #(cat ~/.cache/wal/sequences &)
