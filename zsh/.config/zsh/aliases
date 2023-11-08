@@ -15,3 +15,9 @@ alias ls='ls --color=auto'
 # Directory stack
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+
+# Latex
+alias lm='latexmk -pdf'
+alias lc='latexmk -c'
+alias lmc='latexmk -pdf && latexmk -c'
