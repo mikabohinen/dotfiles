@@ -13,7 +13,7 @@ import XMonad.Util.WorkspaceCompare
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Hacks as Hacks
 import XMonad.Util.Run (spawnPipe)
-import XMonad.Util.NamedScratchpad (scratchpadWorkspaceTag)
+import XMonad.Util.NamedScratchpad (scratchpadWorkspaceTag, namedScratchpadFilterOutWorkspace)
 
 -- import modules in ./lib/Custom
 import Custom.MyCatppuccin
@@ -60,9 +60,16 @@ main = do
         `additionalKeysP` myKeys
 
 myLogHook xmproc =
-    dynamicLogWithPP
-        xmobarPP
-            { ppOutput = hPutStrLn xmproc
-            , ppCurrent = xmobarColor "#429942" "" . wrap "<" ">"
-            , ppTitle = xmobarColor "#429942" "" . shorten 50
-            }
+    dynamicLogWithPP $ xmobarPP
+        { ppOutput = hPutStrLn xmproc
+        , ppCurrent = xmobarColor "#429942" "" . wrap "<" ">"
+        , ppTitle = xmobarColor "#429942" "" . shorten 50
+        , ppHidden = xmobarColor "#429942" "" . filterOutEmpty
+        , ppHiddenNoWindows = const ""  -- Don't display hidden workspaces with no windows
+        , ppVisible = xmobarColor "#429942" "" -- Customize as needed for visible but not focused workspaces
+        }
+
+filterOutEmpty :: WorkspaceId -> String
+filterOutEmpty wsId
+    | wsId == scratchpadWorkspaceTag = ""  -- Hide the NSP workspace
+    | otherwise = wsId
