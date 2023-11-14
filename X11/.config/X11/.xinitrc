@@ -8,6 +8,8 @@ xset r rate 200 30
 setxkbmap -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape'
 
+greenclip daemon &
+
 # better mounting of devices
 udiskie &
 
@@ -19,4 +21,4 @@ if test -z "$XDG_RUNTIME_DIR"; then
     export XDG_RUNTIME_DIR=$(mktemp -d /tmp/$(id -u)-runtime-dir.XXX)
 fi
 
-exec dbus-launch --sh-syntax --exit-with-session xmonad
+exec dbus-launch --sh-syntax --exit-with-session "$HOME/.local/bin/xmonad"
