@@ -1,18 +1,21 @@
 Config {
-  font = "xft:Fira Code Nerd Font:size=8:bold:antialias=true"
-, bgColor = "#1c1c1c"
-, fgColor = "#dcdccc"
-, position = TopSize C 100 24
-, lowerOnStart = True
-, commands = [
-    Run Date "%a %b %_d %Y %H:%M" "date" 10
-  , Run Cpu ["-t","<total>%"] 10
-  , Run Memory ["-t","Mem: <usedratio>%"] 10
-  , Run BatteryP ["BAT0"] ["-t", "Bat: <acstatus><left>%", "-L", "10", "-H", "80", "--high", "green", "--normal", "yellow", "--low", "red"] 60
-  , Run Network "wlp0s20f3" ["-t","Net: <rx>kb, <tx>kb"] 10
-  , Run StdinReader
-  ]
-, sepChar = "%"
-, alignSep = "}{"
-, template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %wlp0s20f3% | <fc=#f0dfaf>%date%</fc>"
+    font = "xft:Fira Code Nerd Font:size=8:bold:antialias=true, Font Awesome 5 Free:size=8"
+  , additionalFonts = [ "xft:Font Awesome 5 Free:size=8" ]
+  , bgColor = "#1c1c1c"
+  , fgColor = "#dcdccc"
+  , position = TopSize C 100 24
+  , lowerOnStart = True
+  , commands = [
+      Run Date "<fn=1> </fn> %a %b %_d %Y %H:%M" "date" 10
+    , Run Cpu ["-t","<fn=0> </fn> <total>%"] 10
+    , Run Memory ["-t","Mem: <usedratio>%"] 10
+    , Run BatteryP ["BAT0"] ["-t", "<fn=0><</fn> Bat: <acstatus><left>%", "-L", "10", "-H", "80", "--high", "green", "--normal", "yellow", "--low", "red"] 60
+    , Run Network "wlp0s20f3" ["-t","<fn=0> </fn> Net: <rx>kb, <tx>kb"] 10
+    , Run StdinReader
+    , Run DiskU [("/", "<fn=1></fn> <free> free")] [] 60
+    , Run Com "getMasterVolume" [] "volume" 10
+    ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %disku% | %wlp0s20f3% | %volume% | <fc=#f0dfaf>%date%</fc>"
 }
