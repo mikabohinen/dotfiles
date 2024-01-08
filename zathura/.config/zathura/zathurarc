@@ -1,4 +1,3 @@
-set recolor "true"
 
 set completion-bg "#030D0B"
 set completion-fg "#7ab4d7"
