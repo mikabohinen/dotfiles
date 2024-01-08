@@ -31,7 +31,7 @@ import XMonad.StackSet qualified as W
 import XMonad.Util.NamedScratchpad
 
 myBrowser :: String
-myBrowser = "brave-browser-nightly"
+myBrowser = "librewolf"
 
 myKeys :: [(String, X ())]
 myKeys =
@@ -43,6 +43,8 @@ myKeys =
     ("M-d", spawn "~/.config/rofi/themes/randomiser.sh; rofi -show drun"),
     ("M-y", spawn "~/.config/rofi/themes/randomiser.sh; rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"),
     ("M1-<Tab>", spawn "rofi -show window"),
+    -- Keyboard layouts
+    ("M-z", spawn "$HOME/dotfiles/scripts/toggleLayout.sh"),
     -- XPrompts
     ("M-s-m", manPrompt myPromptConfig),
     ("M-s-x", xmonadPrompt myPromptConfig),
@@ -98,7 +100,7 @@ myKeys =
     ("M-h", sendMessage Shrink),
     ("M-l", sendMessage Expand),
     ("M-a", sendMessage MirrorShrink),
-    ("M-z", sendMessage MirrorExpand),
+    -- ("M-z", sendMessage MirrorExpand),
     ("M-S-t", withFocused $ windows . W.sink),
     ("M-,", sendMessage (IncMasterN 1)),
     ("M-.", sendMessage (IncMasterN (-1))),
