@@ -311,19 +311,6 @@ maps.n["<leader>pA"] = { "<cmd>NvimUpdate<cr>", desc = "Nvim Update" }
 maps.n["<leader>pv"] = { "<cmd>NvimVersion<cr>", desc = "Nvim Version" }
 maps.n["<leader>pl"] = { "<cmd>NvimChangelog<cr>", desc = "Nvim Changelog" }
 
--- buffers/tabs [buffers ]--------------------------------------------------
-maps.n["<leader>c"] = { -- Close window and buffer at the same time.
-	function()
-		require("base.utils.buffer").wipe()
-	end,
-	desc = "Wipe buffer",
-}
-maps.n["<leader>C"] = { -- Close buffer keeping the window.
-	function()
-		require("base.utils.buffer").close()
-	end,
-	desc = "Close buffer",
-}
 -- Close buffer keeping the window → Without confirmation.
 -- maps.n["<leader>X"] = {
 --   function() require("base.utils.buffer").close(0, true) end,
@@ -774,12 +761,6 @@ if vim.fn.executable("gitui") == 1 then -- if gitui exists, show it
 		end,
 		desc = "ToggleTerm gitui",
 	}
-end
-
--- file browsers ------------------------------------
--- ranger
-if is_available("rnvimr") then
-	maps.n["<leader>r"] = { "<cmd>RnvimrToggle<cr>", desc = "Ranger" }
 end
 
 -- neotree

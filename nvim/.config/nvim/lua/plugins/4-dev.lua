@@ -16,8 +16,9 @@
 --       ## ANALYZER
 --       -> aerial.nvim                    [symbols tree]
 
---       ## LATEX
+--       ## LANGUAGES
 --       -> vimtex
+--       -> haskell-tools.nvim
 
 --       ## CODE DOCUMENTATION
 --       -> dooku.nivm                     [html doc generator]
@@ -209,7 +210,7 @@ return {
 		},
 	},
 
-	-- LATEX
+	-- LANGUAGES
 	-- vimtex [latex support]
 	-- https://github.com/lervag/vimtex
 	{
@@ -230,6 +231,15 @@ return {
 			}
 		end,
 	},
+
+	-- haskell-tools.nvim [better integration of haskell]
+	-- https://github.com/mrcjkb/haskell-tools.nvim
+	{
+  	"mrcjkb/haskell-tools.nvim",
+  	version = "^3", -- Recommended
+  	ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+	},
+
 
 	--  CODE DOCUMENTATION ------------------------------------------------------
 	--  dooku.nvim [html doc generator]
