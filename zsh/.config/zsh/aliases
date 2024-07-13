@@ -1,4 +1,8 @@
-alias ll='ls -lah'
+alias l=eza
+alias ls=eza
+alias la='eza -la'
+alias lah='eza -lah'
+alias ll='eza -lah'
 
 # Git
 alias ga='git add'
@@ -7,7 +11,7 @@ alias gp='git push'
 
 # Neovim
 alias v='nvim'
-alias vim='nvim'
+# alias vim='nvim'
 
 # Better ls
 alias ls='ls --color=auto'
@@ -21,3 +25,10 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias lm='latexmk -pdf'
 alias lc='latexmk -c'
 alias lmc='latexmk -pdf && latexmk -c'
+
+
+# Tmux
+alias t=tmux
+
+# Prettier cat
+alias cat=bat

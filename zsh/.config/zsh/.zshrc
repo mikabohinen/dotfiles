@@ -12,11 +12,8 @@ autoload -Uz compinit; compinit
 _comp_options+=(globdots) # With hidden files
 source ~/dotfiles/zsh/.config/zsh/external/completion.zsh
 
-
-# Enable portage completion for zsh
-autoload -U compinit promptinit
-compinit
-promptinit; prompt gentoo
+# Ignore commands which start with a space
+setopt HIST_IGNORE_SPACE
 
 # Push the current directory visited on to the stack.
 setopt AUTO_PUSHD
@@ -53,7 +50,7 @@ bindkey -r '^l'
 bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
-source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Better cd
 if command -v zoxide >/dev/null 2>&1; then
@@ -71,3 +68,9 @@ source "/home/mika/.config/zsh/external/minimal.zsh"
 
 # bun completions
 #[ -s "/home/mika/.bun/_bun" ] && source "/home/mika/.bun/_bun"
+
+# Add a pokemon on startup :)
+pokemon-colorscripts --no-title -r 1,3,6
+
+# opam configuration
+[[ ! -r /home/mika/.opam/opam-init/init.zsh ]] || source /home/mika/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

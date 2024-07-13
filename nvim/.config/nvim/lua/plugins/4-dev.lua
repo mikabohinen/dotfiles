@@ -58,7 +58,7 @@ return {
 		},
 		opts = function()
 			local commentstring_avail, commentstring =
-				pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+					pcall(require, "ts_context_commentstring.integrations.comment_nvim")
 			return commentstring_avail and commentstring and { pre_hook = commentstring.create_pre_hook() } or {}
 		end,
 	},
@@ -235,11 +235,10 @@ return {
 	-- haskell-tools.nvim [better integration of haskell]
 	-- https://github.com/mrcjkb/haskell-tools.nvim
 	{
-  	"mrcjkb/haskell-tools.nvim",
-  	version = "^3", -- Recommended
-  	ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+		"mrcjkb/haskell-tools.nvim",
+		version = "^3", -- Recommended
+		ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
 	},
-
 
 	--  CODE DOCUMENTATION ------------------------------------------------------
 	--  dooku.nvim [html doc generator]
@@ -496,8 +495,8 @@ return {
 						local rustc_sysroot = vim.fn.trim(vim.fn.system("rustc --print sysroot"))
 
 						local script_import = 'command script import "'
-							.. rustc_sysroot
-							.. '/lib/rustlib/etc/lldb_lookup.py"'
+								.. rustc_sysroot
+								.. '/lib/rustlib/etc/lldb_lookup.py"'
 						local commands_file = rustc_sysroot .. "/lib/rustlib/etc/lldb_commands"
 
 						local commands = {}
@@ -560,7 +559,7 @@ return {
 					request = "launch",
 					name = "Launch dart",
 					dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/", -- ensure this is correct
-					flutterSdkPath = "/opt/flutter", -- ensure this is correct
+					flutterSdkPath = "/opt/flutter",             -- ensure this is correct
 					program = "${workspaceFolder}/lib/main.dart", -- ensure this is correct
 					cwd = "${workspaceFolder}",
 				},
@@ -569,7 +568,7 @@ return {
 					request = "launch",
 					name = "Launch flutter",
 					dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/", -- ensure this is correct
-					flutterSdkPath = "/opt/flutter", -- ensure this is correct
+					flutterSdkPath = "/opt/flutter",             -- ensure this is correct
 					program = "${workspaceFolder}/lib/main.dart", -- ensure this is correct
 					cwd = "${workspaceFolder}",
 				},
@@ -588,7 +587,7 @@ return {
 					request = "launch",
 					name = "Launch kotlin program",
 					projectRoot = "${workspaceFolder}/app", -- ensure this is correct
-					mainClass = "AppKt", -- ensure this is correct
+					mainClass = "AppKt",               -- ensure this is correct
 				},
 			}
 
@@ -652,7 +651,7 @@ return {
 					name = "Launch file",
 					showDebugOutput = true,
 					pathBashdb = vim.fn.stdpath("data")
-						.. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+							.. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
 					pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
 					trace = true,
 					file = "${file}",
@@ -778,7 +777,7 @@ return {
 				virtual_text = {
 					format = function(diagnostic)
 						local message =
-							diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+								diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
 						return message
 					end,
 				},

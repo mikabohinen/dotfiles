@@ -11,7 +11,7 @@ export VISUAL="nvim"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$HOME/.local/bin:$BUN_INSTALL/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.local/bin:$BUN_INSTALL/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$PATH:$HOME/workspace/doom-emacs/bin/:$HOME/.cargo/bin"
 
 # History file path
 export HISTFILE="$ZDOTDIR/.zhistory"
@@ -25,3 +25,4 @@ export DOTFILES="$HOME/dotfiles"
 # fzf and ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+. "$HOME/.cargo/env"
